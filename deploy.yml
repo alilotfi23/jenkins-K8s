@@ -1,0 +1,37 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: web-app
+  namespace: default
+  labels:
+    app: web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+      - name: web-app
+        image: "alilotfi/jenkins-k8s:latest"
+        ports:
+          - containerPort: 8585
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app
+  namespace: default
+spec:
+  selector:
+    app: web-app
+  type: LoadBalancer
+  ports:
+  - name: http
+    targetPort: 8585
+    port: 80
