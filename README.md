@@ -62,7 +62,7 @@ Ensure you have the following installed and configured:
 
 ### Jenkins Pipeline Script
 
-Here is a sample Jenkins pipeline script:
+sample Jenkins pipeline script:
 
 ```groovy
 pipeline {
