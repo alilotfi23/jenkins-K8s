@@ -1,37 +1,39 @@
 ---
+# Define a Deployment resource for the web application
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: web-app
-  namespace: default
+  name: web-app  # Name of the deployment
+  namespace: default  # Namespace in which the deployment is created
   labels:
-    app: web-app
+    app: web-app  # Labels to identify the deployment
 spec:
-  replicas: 2
+  replicas: 2  # Number of pod replicas to run
   selector:
     matchLabels:
-      app: web-app
+      app: web-app  # Selector to identify pods managed by this deployment
   template:
     metadata:
       labels:
-        app: web-app
+        app: web-app  # Labels assigned to the pods created by this deployment
     spec:
       containers:
-      - name: web-app
-        image: "alilotfi/jenkins-k8s:latest"
+      - name: web-app  # Name of the container
+        image: "alilotfi/jenkins-k8s:latest"  # Docker image to use for the container
         ports:
-          - containerPort: 8585
+          - containerPort: 8585  # Port on which the container listens for traffic
 ---
+# Define a Service resource to expose the web application
 apiVersion: v1
 kind: Service
 metadata:
-  name: web-app
-  namespace: default
+  name: web-app  # Name of the service
+  namespace: default  # Namespace in which the service is created
 spec:
   selector:
-    app: web-app
-  type: LoadBalancer
+    app: web-app  # Selector to route traffic to the pods with this label
+  type: LoadBalancer  # Type of service; LoadBalancer exposes it externally
   ports:
-  - name: http
-    targetPort: 8585
-    port: 80
+  - name: http  # Name of the port configuration
+    targetPort: 8585  # Port on the pod to forward traffic to
+    port: 80  # Port exposed by the service
