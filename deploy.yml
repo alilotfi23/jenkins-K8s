@@ -1,7 +1,7 @@
 ---
 # Define a Deployment resource for the web application
 kind: Deployment
-apiVersion: apps/v1
+apiVersion: apps/v1 # apiVersion
 metadata:
   name: web-app  # Name of the deployment
   namespace: default  # Namespace in which the deployment is created
