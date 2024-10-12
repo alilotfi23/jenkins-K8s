@@ -31,7 +31,7 @@ Ensure you have the following installed and configured:
 #### 1. Jenkins Setup
 
 - Install Jenkins on your server.
-- Install the necessary plugins: Git, Docker, Kubernetes.
+- Install the necessary plugins: Git, Docker, and Kubernetes.
 
 #### 2. Git Repository
 
