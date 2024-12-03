@@ -2,7 +2,7 @@
 
 ### Overview
 
-This project demonstrates the deployment of applications on a Kubernetes cluster using Jenkins for Continuous Integration and Continuous Deployment (CI/CD).
+This project demonstrates deploying applications on a Kubernetes cluster using Jenkins for Continuous Integration and Continuous Deployment (CI/CD).
 
 ### BluePrint
 
