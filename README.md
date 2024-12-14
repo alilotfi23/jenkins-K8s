@@ -14,7 +14,7 @@ The following diagram provides a high-level overview of the CI/CD pipeline:
 2. **Webhook Trigger**: The push event triggers a webhook to Jenkins.
 3. **Build Image**: Jenkins pulls the source code and builds a Docker image.
 4. **Push to Docker Hub**: The built Docker image is pushed to Docker Hub.
-5. **Deploy on Kubernetes**: The Docker image is deployed to a Kubernetes cluster.
+5. **Deploy on Kubernetes**: The Docker image is deployed to a K8s cluster.
 
 ### Prerequisites
 
